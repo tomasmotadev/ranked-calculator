@@ -6,298 +6,68 @@
 <link rel="icon" href="https://tomasmotadev.github.io/profile.jpg" type="image/jpg" />
 <title>Ranked Matches - Tomás Mota</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
-/* Custom base palette (white, gray, black, red, blue, yellow) */
-:root {
---c-white: #ffffff;
---c-white2: #cfcfcf;
---c-black: #0b0b0b;
---c-gray: #2b2f36;
---c-gray-2: #3a3f46;
---c-red: #ff3b3b;
---c-blue: #1a73ff;
---c-yellow: #ffd43b;
-}
-body {
-text-align: center;
-background: var(--c-black);
-color: var(--c-white);
-}
-/* "Hero" background similar to the submitted image */
-.hero-wrap {
-background: radial-gradient(1200px 600px at 10% 10%, rgba(26, 115, 255, 0.12), transparent 60%),
-radial-gradient(900px 500px at 90% 80%, rgba(255, 59, 59, 0.12), transparent 60%),
-linear-gradient(180deg, #0f1620 0%, #0c121a 100%);
-color: var(--c-white);
-box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
-}
-#herop {
-color: var(--c-white2);
-}
-/* Tech chips with slightly rounded corners */
-.tech-chip {
-border-radius: 999px;
-font-weight: 600;
-padding: .6rem 1rem;
-background: var(--c-gray);
-color: var(--c-white);
-}
-/* Soft shadow and standard rounded border */
-.card {
-border-radius: 1rem;
-box-shadow: 0 12px 30px rgba(0, 0, 0, .10);
-background: var(--c-gray-2);
-color: var(--c-white);
-}
-/* Primary buttons */
-.btn {
-border-radius: .8rem;
-font-weight: 600;
-transition: transform .15s ease, box-shadow .15s ease;
-background: var(--c-blue);
-color: var(--c-white);
-}
-.btn:active {
-transform: translateY(1px);
-}
-  
-/* REMOVED: The global timeline rule. */
-/* ADDED: The rule within a media query for the 'md' breakpoint */
-@media (min-width: 768px) {
-  .timeline:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, var(--c-red), var(--c-blue));
-    border-radius: 999px;
-  }
-}
-/* Certificates carousel - hide scrollbar */
-#cert-track {
-scrollbar-width: none;
-}
-#cert-track::-webkit-scrollbar {
-display: none;
-}
-/* Header adjusted for dark theme */
-header {
-background: var(--c-gray-2);
-color: var(--c-white);
-}
-header a {
-color: var(--c-white);
-}
-header a:hover {
-color: var(--c-white);
-}
-/* Mobile menu adjusted for dark theme */
-#mobile-menu {
-background: var(--c-gray-2);
-color: var(--c-white);
-}
-#mobile-menu a {
-color: var(--c-white);
-}
-/* Projects, certificates, photography, and music adjusted for dark theme */
-.card {
-  background: var(--c-gray-2);
-  color: var(--c-white);
-}
-
-.card img {
-  filter: brightness(0.8);
-}
-
-.card h3 {
-  color: var(--c-white);
-}
-
-/* Change here: text color for certificates description */
-#certificados .card p {
-  color: var(--c-white);
-}
-
-/* Professional experience adjusted for dark theme */
-#cv {
-background: var(--c-gray-2);
-}
-#cv p {
-color: var(--c-white2);
-}
-#cv h3 {
-color: var(--c-white);
-}
-/* Footer adjusted for dark theme */
-footer {
-color: var(--c-gray);
-}
-
-  /* Dropdown menu styles */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--c-gray-2);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100%;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.dropdown-content a {
-    color: var(--c-white);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--c-gray);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Mobile Dropdown */
-.mobile-dropdown-btn {
-    display: block;
-    cursor: pointer;
-}
-
-.mobile-dropdown-content {
-    display: none;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-}
-
-.mobile-dropdown-content a {
-    padding: 8px 0;
-}
-
-/*Slideshow @ Photography*/
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  padding-top: 66.66%; /* To maintain a 3:2 aspect ratio, for example */
-  overflow: hidden;
-  border-radius: 1rem; /* Rounded card border */
-  margin-bottom: 12px; /* Space below the image */
-}
-
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* Specific styles for the calculator */
-.calculator-container {
-  background-color: var(--c-gray-2);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  max-width: 500px;
-  margin: 40px auto;
-}
-.calculator-container h1 {
-  color: var(--c-white);
-  margin-bottom: 20px;
-}
-.calculator-container label {
-  font-size: 18px;
-  color: var(--c-white2);
-  display: block;
-  margin-bottom: 10px;
-}
-.calculator-container input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid var(--c-gray);
-  background-color: var(--c-gray);
-  border-radius: 5px;
-  font-size: 16px;
-  color: var(--c-white);
-}
-.calculator-container button {
-  background-color: var(--c-blue);
-  color: var(--c-white);
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.calculator-container button:hover {
-  background-color: #0056b3;
-}
-#result {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: var(--c-blue);
-  word-wrap: break-word;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- ===================== -->
+    <!-- Header / Navegação -->
+    <!-- ===================== -->
     <header class="flex justify-between items-center px-6 py-4 shadow-md bg-[var(--c-gray-2)] sticky top-0 z-50">
-        <a href="https://tomasmotadev.github.io" class="flex items-center space-x-3">
+        <!-- Logo / Nome -->
+        <a href="https://tomasmotadev.github.io" class="flex items-center space-x-3" >
             <img src="https://tomasmotadev.github.io/profile.jpg" alt="Logo" class="w-10 h-10 rounded-full">
-            <span class="font-bold text-xl">Tomás Mota</span>
+            <span class="font-bold text-xl">Tomás Mota </span> 
         </a>
-         <nav class="hidden md:flex space-x-3">
-            <a href="https://tomasmotadev.github.io/projects" class="px-4 py-2 bg-gray-500 rounded-lg hover:bg-white-500 hover:text-black transition">Dev Projects</a>             
-            <a href="https://tomasmotadev.github.io/cv" class="px-4 py-2 bg-gray-500 rounded-lg hover:bg-white-500 hover:text-black transition">CV</a>
-            <a href="https://tomasmotadev.github.io/about" class="px-4 py-2 bg-gray-500 rounded-lg hover:bg-white-500 hover:text-black transition">About</a>
 
-           <div class="dropdown">
-                <button class="px-4 py-2 bg-gray-500 rounded-lg hover:bg-white-500 hover:text-black transition">Photography</button>
+        <!-- Navegação Desktop -->
+        <nav class="hidden md:flex space-x-3">
+            <!-- Links principais -->
+                <a href="https://tomasmotadev.github.io/projects" 
+                class="px-4 py-2 rounded-lg text-white transition hover:underline"
+                style="background-color: rgba(15, 22, 32, 0.349); backdrop-filter: blur(10px);">
+                Dev Projects
+                </a>
+
+                <a href="https://tomasmotadev.github.io/cv" 
+                class="px-4 py-2 rounded-lg text-white transition hover:underline"
+                style="background-color: rgba(15, 22, 32, 0.349); backdrop-filter: blur(10px);">
+                CV
+                </a>
+
+                <a href="https://tomasmotadev.github.io/about" 
+                class="px-4 py-2 rounded-lg text-white transition hover:underline"
+                style="background-color: rgba(15, 22, 32, 0.349); backdrop-filter: blur(10px);">
+                About
+                </a>
+
+            <!-- Dropdown Photography -->
+            <div class="dropdown">
+                <a class="px-4 py-2 rounded-lg text-white transition hover:underline"
+                style="background-color: rgba(15, 22, 32, 0.349); backdrop-filter: blur(10px);">
+                Photography
+                </a>
                 <div class="dropdown-content">
                     <a href="https://tomasmotadev.github.io/photography/category/sport">Sport</a>
                     <a href="https://tomasmotadev.github.io/photography/category/music">Music</a>
                     <a href="https://tomasmotadev.github.io/photography/category/casual">Casual</a>
                 </div>
             </div>
-           
+
+            <!-- Dropdown Contact -->
             <div class="dropdown">
-                <button class="px-4 py-2 bg-gray-500 rounded-lg hover:bg-white-500 hover:text-black transition">Contact</button>
-                <div class="dropdown-content">
+                <a class="px-4 py-2 rounded-lg text-white transition hover:underline"
+                style="background-color: rgba(15, 22, 32, 0.349); backdrop-filter: blur(10px);">
+                Contact
+                </a>                <div class="dropdown-content">
                     <a href="https://tomasmotadev.github.io/github">GitHub</a>
                     <a href="https://tomasmotadev.github.io/linkedin">LinkedIn</a>
                     <a href="mailto:tomasmotadev@proton.me">Email</a>
                 </div>
-            </div>
+            </div>            
         </nav>
       
+        <!-- Menu Mobile -->
         <div class="md:hidden">
             <button id="menu-btn" class="focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -306,33 +76,39 @@ color: var(--c-gray);
             </button>
         </div>
     </header>
-    <div id="mobile-menu" class="hidden flex-col space-y-2 p-4 bg-white shadow-md md:hidden">
-        <a href="https://tomasmotadev.github.io/projects" class="block px-4 py-2 bg-gray-500 rounded-lg">Dev Projects</a>       
-        <a href="https://tomasmotadev.github.io/cv" class="block px-4 py-2 bg-gray-500 rounded-lg">CV</a>
-        <a href="https://tomasmotadev.github.io/about" class="block px-4 py-2 bg-gray-500 rounded-lg">About</a>
 
-        <div class="flex flex-col">
-            <span id="mobile-photography-btn" class="mobile-dropdown-btn px-4 py-2 bg-gray-500 rounded-lg">Photography</span>
-            <div id="mobile-photography-menu" class="mobile-dropdown-content">
-                <a href="https://tomasmotadev.github.io/photography/category/sport">Sport</a>
-                <a href="https://tomasmotadev.github.io/photography/category/music">Music</a>
-                <a href="https://tomasmotadev.github.io/photography/category/casual">Casual</a>
-            </div>
-        </div>
-      
-        <div class="flex flex-col">
-            <span id="mobile-contact-btn" class="mobile-dropdown-btn px-4 py-2 bg-gray-500 rounded-lg">Contact</span>
-            <div id="mobile-contact-menu" class="mobile-dropdown-content">
-                <a href="https://tomasmotadev.github.io/github" class="block px-4 py-2">GitHub</a>
-                <a href="https://tomasmotadev.github.io/linkedin" class="block px-4 py-2">LinkedIn</a>
-                <a href="mailto:tomasmotadev@proton.me" class="block px-4 py-2">Email * tomasmotadev@proton.me</a>
-            </div>
+<!-- ===================== -->
+<!-- Mobile Menu -->
+<!-- ===================== -->
+<div id="mobile-menu" class="hidden flex-col space-y-2 p-4 md:hidden">
+    <!-- Links principais -->
+    <a href="https://tomasmotadev.github.io/projects" class="block">Dev Projects</a>       
+    <a href="https://tomasmotadev.github.io/cv" class="block">CV</a>
+    <a href="https://tomasmotadev.github.io/about" class="block">About</a>
+
+    <!-- Dropdown Photography Mobile -->
+    <div class="flex flex-col">
+        <span id="mobile-photography-btn" class="mobile-dropdown-btn block">Photography</span>
+        <div id="mobile-photography-menu" class="mobile-dropdown-content">
+            <a href="https://tomasmotadev.github.io/photography/category/sport" class="block">Sport</a>
+            <a href="https://tomasmotadev.github.io/photography/category/music" class="block">Music</a>
+            <a href="https://tomasmotadev.github.io/photography/category/casual" class="block">Casual</a>
         </div>
     </div>
+
+    <!-- Dropdown Contact Mobile -->
+    <div class="flex flex-col">
+        <span id="mobile-contact-btn" class="mobile-dropdown-btn block">Contact</span>
+        <div id="mobile-contact-menu" class="mobile-dropdown-content">
+            <a href="https://tomasmotadev.github.io/github" class="block">GitHub</a>
+            <a href="https://tomasmotadev.github.io/linkedin" class="block">LinkedIn</a>
+            <a href="mailto:tomasmotadev@proton.me" class="block">Email * tomasmotadev@proton.me</a>
+        </div>
+    </div>
+</div>
   
 <main>
-  
-<section id="ranked-calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+  <section id="ranked-calculator" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
     <div class="calculator-container card p-8 md:p-12 rounded-2xl">
         <h1>Ranked Matches Calculator</h1>
         <p class="mb-4">Enter the number of wins and losses to calculate your rank.</p>
@@ -347,86 +123,17 @@ color: var(--c-gray);
 
 </main>
   
-<footer class="py-10 text-sm text-gray-500">© <span id="year"></span> Tomás Mota LLC. All Rights Reserved.</footer>
-  
-<script>
-// Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- ===================== -->
+    <!-- Footer -->
+    <!-- ===================== -->
+    <footer class="py-10 text-sm text-gray-500">
+        © 2024-<span id="year"></span> Tomás Mota LLC. All Rights Reserved.
+    </footer>
 
-// Mobile menu
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-// Mobile contact dropdown menu
-const mobileContactBtn = document.getElementById('mobile-contact-btn');
-const mobileContactMenu = document.getElementById('mobile-contact-menu');
-if (mobileContactBtn && mobileContactMenu) {
-    mobileContactBtn.addEventListener('click', () => {
-        mobileContactMenu.style.display =
-            mobileContactMenu.style.display === 'block' ? 'none' : 'block';
-    });
-}
-
-// Mobile photography dropdown menu
-const mobilePhotoBtn = document.getElementById('mobile-photography-btn');
-const mobilePhotoMenu = document.getElementById('mobile-photography-menu');
-if (mobilePhotoBtn && mobilePhotoMenu) {
-    mobilePhotoBtn.addEventListener('click', () => {
-        mobilePhotoMenu.style.display =
-            mobilePhotoMenu.style.display === 'block' ? 'none' : 'block';
-    });
-}
-
-// **Ranked Calculator Logic (JavaScript)**
-
-// Equivalent to the calculate_rank function in Python
-function calculateRank(wins, losses) {
-    const balance = wins - losses;
-    let rank;
-    
-    // The same ranking logic as your Python code.
-    if (wins < 10) {
-        rank = "Iron";
-    } else if (wins >= 11 && wins <= 20) {
-        rank = "Bronze";
-    } else if (wins >= 21 && wins <= 50) {
-        rank = "Silver";
-    } else if (wins >= 51 && wins <= 80) {
-        rank = "Gold";
-    } else if (wins >= 81 && wins <= 90) {
-        rank = "Diamond";
-    } else if (wins >= 91 && wins <= 100) {
-        rank = "Legendary";
-    } else { // wins >= 101
-        rank = "Immortal";
-    }
-    
-    return [balance, rank];
-}
-
-// Equivalent to the main function in Python
-function main() {
-    const winsInput = document.getElementById('wins').value;
-    const lossesInput = document.getElementById('losses').value;
-    const resultDiv = document.getElementById('result');
-    
-    const wins = parseInt(winsInput);
-    const losses = parseInt(lossesInput);
-    
-    // Error handling as in your Python code
-    if (isNaN(wins) || isNaN(losses)) {
-        resultDiv.textContent = "Please enter valid integer numbers.";
-        resultDiv.style.color = "var(--c-red)";
-        return;
-    }
-    
-    const [balance, rank] = calculateRank(wins, losses);
-    
-    resultDiv.textContent = `The Hero has a balance of ${balance} and is at the rank of ${rank}.`;
-    resultDiv.style.color = "var(--c-blue)";
-}
-</script>
+    <!-- ===================== -->
+    <!-- Scripts -->
+    <!-- ===================== -->
+    <script src="script.js"></script>
 
 </body>
 </html>
