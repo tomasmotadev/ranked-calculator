@@ -86,4 +86,3 @@ function main() {
     resultDiv.textContent = `The Hero has a balance of ${balance} and is at the rank of ${rank}.`;
     resultDiv.style.color = "var(--c-blue)";
 }
-</html>
